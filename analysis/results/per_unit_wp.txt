@@ -1,0 +1,10 @@
+# per-unit WP of experiments/031_seed_ensemble_distillation/results/checkpoints_S1_a100:best_ema.pt on valid scored rows (3,528,273 rows)
+
+global WP 0.689331
+
+| unit | weight share | WP inside unit | global WP if this unit were perfect |
+|---|---|---|---|
+| 0.1254 | 28.2% | 0.8026 | 0.7525 |
+| 0.2413 | 15.8% | 0.7750 | 0.7278 |
+| 0.4685 | 8.3% | 0.7327 | 0.7116 |
+| 0.6569 | 47.7% | 0.4400 | 0.9073 |

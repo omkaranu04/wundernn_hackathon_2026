@@ -1,0 +1,25 @@
+# 3,980,200 rows from 200 train sequences
+
+## t0: 201 distinct values (rounded 1e-6); exact zeros 22.1%; std 0.991
+most frequent: +0.000000 (22.1%), -0.656868 (17.3%), -0.468536 (10.7%), -1.970603 (6.0%), -1.405608 (5.6%), +0.656868 (3.7%), +0.468536 (3.3%), -0.241330 (2.8%), -0.125433 (1.9%), -0.723989 (1.7%), -0.376299 (1.7%), +0.937072 (1.7%)
+smallest |nonzero| values: 0.125433, 0.241330, 0.250866, 0.376299, 0.468536, 0.482659, 0.501733, 0.627166
+  step 0.656868: share of nonzero |y| within 1% of an integer multiple: 39.5%
+  step 0.468536: share of nonzero |y| within 1% of an integer multiple: 34.7%
+  |y| ~ 0 x 0.6569: rows 29.6%, share of metric weight sum|clip y| 2.2%
+  |y| ~ 1 x 0.6569: rows 47.7%, share of metric weight sum|clip y| 42.3%
+  |y| ~ 2 x 0.6569: rows 10.6%, share of metric weight sum|clip y| 20.9%
+  |y| ~ 3 x 0.6569: rows 9.3%, share of metric weight sum|clip y| 26.3%
+  |y| ~ 4 x 0.6569: rows 1.7%, share of metric weight sum|clip y| 5.0%
+
+## t1: 212 distinct values (rounded 1e-6); exact zeros 22.4%; std 0.981
+most frequent: +0.000000 (22.4%), -0.656868 (16.8%), -0.468536 (10.9%), -1.970603 (6.5%), -1.405608 (6.2%), +0.656868 (3.4%), +0.468536 (3.1%), -0.241330 (2.9%), -0.125433 (2.0%), +0.937072 (1.7%), -0.723989 (1.7%), -0.376299 (1.6%)
+smallest |nonzero| values: 0.125433, 0.241330, 0.250866, 0.376299, 0.468536, 0.482659, 0.501733, 0.627166
+  step 0.656868: share of nonzero |y| within 1% of an integer multiple: 39.0%
+  step 0.468536: share of nonzero |y| within 1% of an integer multiple: 35.0%
+  |y| ~ 0 x 0.6569: rows 30.1%, share of metric weight sum|clip y| 2.3%
+  |y| ~ 1 x 0.6569: rows 46.3%, share of metric weight sum|clip y| 40.7%
+  |y| ~ 2 x 0.6569: rows 11.0%, share of metric weight sum|clip y| 21.6%
+  |y| ~ 3 x 0.6569: rows 9.9%, share of metric weight sum|clip y| 27.8%
+  |y| ~ 4 x 0.6569: rows 1.6%, share of metric weight sum|clip y| 4.7%
+
+corr(t0, t1) = -0.7466; share of rows with t0 == t1 == 0: 0.0%

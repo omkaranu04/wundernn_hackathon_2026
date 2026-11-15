@@ -1,0 +1,2 @@
+corr(t0, t1) = -0.722284
+computed exactly over all 212,140,000 rows of train.parquet

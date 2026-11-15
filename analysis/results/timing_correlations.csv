@@ -1,0 +1,107 @@
+label,params,nodes,local_lat_pct_uncorrected,platform_runtime_s,platform_runtime_pct_of_budget,status,implied_speedup_factor,platform_wp,local_wp
+"001 (d=24, original)",nan,nan,93.0,1939,53.9,scored,1.727,0.6403,0.66458
+"002 (5ep, original)",520450,28,127.7,2905,80.7,scored,1.583,0.6507,0.67757
+"002 (extended, 1st try)",520450,28,127.7,4199,116.6,timeout,1.095,nan,0.68039
+"002 (extended, resubmit)",520450,28,127.7,3234,89.8,scored,1.422,0.6522,0.68039
+003,280898,32,91.3,2211,61.4,scored,1.487,0.6499,0.676568
+"004 (5ep, original)",233194,43,89.6,3692,102.6,scored,0.874,0.6508,0.677315
+"004 (15ep, extended)",233194,43,93.8,2223,61.8,scored,1.519,0.6531,0.680497
+004 (30ep),233194,43,95.6,2334,64.8,scored,1.475,0.653,0.682425
+006 (extended 15ep),304258,34,88.5,2206,61.3,scored,1.444,0.6521,0.680431
+008,60994,38,90.4,2247,62.4,scored,1.448,0.6449,0.672887
+009,138974,42,90.6,2329,64.7,scored,1.4,0.6431,0.671075
+010,233194,52,100.5,2441,67.8,scored,1.482,0.6546,0.681145
+011 (2-stage XGBoost head),233194,nan,122.9,2816,78.2,scored,1.571,0.6305,0.65858
+012,269822,62,112.2,2736,76.0,scored,1.476,0.6556,0.682697
+"013 (original, 4 windows)",246334,128,179.9,4200,116.7,timeout,1.542,nan,0.680955
+"013 (price-only, 2 windows)",246334,58,118.3,2737,76.0,scored,1.556,0.6518,nan
+014,477186,155,356.4,4200,116.7,timeout,3.055,nan,0.678463
+015,335998,105,235.5,4199,116.6,timeout,2.019,nan,nan
+016,468094,198,387.3,4199,116.6,timeout,3.321,nan,0.68275
+017,269822,71,123.6,2862,79.5,scored,1.555,0.6553,0.682929
+018 (012 nonlinear + 013 EWMA),271934,76,135.6,3247,90.2,scored,1.503,0.6539,0.681888
+"019 (pooled60, 004 arch)",233194,43,97.3,2247,62.4,scored,1.559,0.6534,0.680039
+022 arm1 (drop i1 price+volume),232490,39,99.6,2277,63.2,scored,1.575,0.6533,0.679939
+024 (012 with GRU),207358,59,99.1,2417,67.1,scored,1.476,0.6524,0.674478
+026 weighted (012 arch),269822,62,113.3,2866,79.6,scored,1.423,0.6559,0.685846
+026 control (012 arch),269822,62,112.2,2737,76.0,scored,1.476,0.6544,0.684065
+027 lean control,248510,46,100.5,2562,71.2,scored,1.412,0.6555,0.68345
+027 lean pure Pearson,248510,46,100.3,2457,68.2,scored,1.47,0.653,0.680912
+001 (d_model=32),20674,64,92.8,2096,58.2,scored,1.594,0.6502,0.677632
+"028 A (lean+weights, EMA)",248510,46,100.0,2476,68.8,scored,1.454,0.6574,0.686746
+"028 B (A + aux head, EMA)",248510,46,100.0,2441,67.8,scored,1.475,0.6583,0.687037
+"028 C (A on train+valid, EMA)",248510,46,100.0,2461,68.4,scored,1.463,0.658,nan
+"029 floor10 (weights 0.1+0.9p, EMA)",248510,46,100.0,2496,69.3,scored,1.442,0.6588,0.687892
+"029 D (028 B recipe on train+valid, EMA)",248510,46,100.0,2511,69.8,scored,1.434,0.6596,nan
+"030 E (floor10+aux, train+valid, EMA, seed 0)",248510,46,100.0,2462,68.4,scored,1.462,0.6605,nan
+030 E seed 1,248510,46,100.0,2487,69.1,scored,1.448,0.6592,nan
+"031 E seed 0, int8 LSTM",248510,46,90.0,2102,58.4,scored,1.541,0.6605,nan
+"031 E seeds 0+1 merged in one graph, int8",968058,46,123.0,2837,78.8,scored,1.561,0.6621,nan
+"031 pair E0+D merged, int8",968058,46,120.4,3021,83.9,scored,1.435,0.6626,nan
+"031 pair E0+C merged, int8",968058,46,120.4,3032,84.2,scored,1.43,0.6624,nan
+"031 pair E1+D merged, int8",968058,46,120.4,3007,83.5,scored,1.441,0.6617,nan
+"031 pair E0+D, SLIM 13-node graph, int8",968058,13,105.0,2517,69.9,scored,1.502,0.6626,nan
+"031 pair of distilled students (a50), slim int8",968058,13,102.5,2477,68.8,scored,1.49,0.662,nan
+"031 R2 pair of width-128 students (teachers = 4 train+valid models), slim int8",968058,13,102.0,2342,65.1,scored,1.568,0.6632,nan
+"031 R2 triple of width-96 students, slim int8",1289270,13,118.2,2717,75.5,scored,1.566,0.6625,nan
+"031 R2 single width-96 student, slim int8",248510,13,67.6,1421,39.5,scored,1.713,0.6623,nan
+"031 R2 single width-128 student (member A of the 0.6632 pair), slim int8",248510,13,71.2,1561,43.4,scored,1.642,0.6628,nan
+"031 single ten-seed student (train-only teachers), slim int8",248510,13,71.4,1616,44.9,scored,1.591,0.6597,0.689331
+"031 pair TVm20+TVm23 (mass-weighted train+valid), slim int8",968058,13,102.0,2411,67.0,scored,1.523,0.6622,nan
+"031 pair TVm21+TVm25, slim int8",968058,13,102.0,2422,67.3,scored,1.516,0.6616,nan
+"031 single TVm20 (E0 recipe + mass weighting), slim int8",248510,13,71.0,1602,44.5,scored,1.596,0.661,nan
+"031 pair R2 student A + TVm23, slim int8",968058,13,102.0,2401,66.7,scored,1.529,0.6621,nan
+"031 R3 single width-128 student of TWELVE train+valid teachers, slim int8",248510,13,72.4,1642,45.6,scored,1.587,0.6642,nan
+"031 R3 single student C (floor 0.3, aux)",248510,13,72.4,1666,46.3,scored,1.564,0.66352,nan
+031 R3 pair of students A+B,968058,13,102.0,2446,67.9,scored,1.501,0.66387,nan
+"031 R4 student A (22 teachers, 4 families)",248510,13,71.7,1652,45.9,scored,1.562,0.66257,nan
+031 R4 student B,248510,13,70.5,1617,44.9,scored,1.57,0.66341,nan
+031 R4 student C,248510,13,71.8,1627,45.2,scored,1.589,0.6625,nan
+"031 R4 student A annealed to true labels, int8",248510,13,72.1,1661,46.1,scored,1.563,0.61641,nan
+"031 R4 student A annealed, fp32",248510,13,83.0,2037,56.6,scored,1.467,0.61613,nan
+031 R5 diagnostic: R4 recipe B on R3 twelve teachers,248510,13,70.0,1681,46.7,scored,1.499,0.66234,nan
+"031 out-of-fold student S_OOF (train-only, cross-fitted teacher targets), slim int8",248510,13,71.0,1552,43.1,scored,1.647,0.65893,0.688101
+"031 width test W256_A: R3 A recipe + TV12 targets, hidden 256, slim int8",887743,13,91.4,2346,65.2,scored,1.403,0.6646,nan
+"031 R5 student A: 20 lean teachers, R3 schedule, slim int8",248510,13,71.7,1667,46.3,scored,1.548,0.66314,nan
+"031 R5 student C: 20 lean teachers, R3 schedule, slim int8",248510,13,73.0,1622,45.1,scored,1.62,0.66221,nan
+"031 R3 single student B (floor 0, no aux), slim int8",248510,13,70.0,1587,44.1,scored,1.588,0.66281,nan
+"031 R6 look-ahead student LA25 (0.5 TV12 + 0.5 la25 teacher), slim int8",248510,13,70.0,1701,47.2,scored,1.481,0.66544,nan
+"031 R6 look-ahead student LA50 (0.5 TV12 + 0.5 la50 teacher), slim int8",248510,13,70.0,1663,46.2,scored,1.515,0.66503,nan
+"031 width-256 seed replicate W256_A2 (TV12, recipe A, seed 3), slim int8",887743,13,91.4,2386,66.3,scored,1.379,0.66426,nan
+"031 width-256 recipe C W256_C (TV12), slim int8",887743,13,91.4,2391,66.4,scored,1.376,0.66426,nan
+"031 R6 pair LA25+LA50 (merged, two different look-ahead label sources), slim int8",968058,13,102.5,2551,70.9,scored,1.446,0.66592,nan
+"031 R7 LAmix student (0.5 TV12 + 0.25 la25 + 0.25 la50), slim int8",248510,13,68.4,1562,43.4,scored,1.576,0.66497,nan
+"031 R6 look-ahead student LA12 (0.5 TV12 + 0.5 la12 teacher), slim int8",248510,13,69.3,1657,46.0,scored,1.506,0.66554,nan
+"031 R7 LA25w75 student (0.25 TV12 + 0.75 la25), slim int8",248510,13,70.0,1721,47.8,scored,1.464,0.66383,nan
+"031 pair LA25+LA12 (merged, different look-ahead windows), slim int8",968058,13,102.5,2436,67.7,scored,1.515,0.6661,nan
+"031 R8 weight soup of 3 branches (LA25 targets), slim int8",248510,13,69.4,1684,46.8,scored,1.484,0.66528,nan
+"031 W256_LA25_A (hidden 256 on 0.5 TV12 + 0.5 la25), slim int8",887743,13,91.4,2391,66.4,scored,1.376,0.6658,nan
+"031 R10 LA12w30 (0.7 TV12 + 0.3 la12), slim int8",248510,13,70.4,1687,46.9,scored,1.502,0.66396,nan
+"031 R9 LA12 recipe C (floor 0.3), slim int8",248510,13,72.1,1731,48.1,scored,1.499,0.66427,nan
+"031 R8 LA25x3 (mean of three la25 teachers), slim int8",248510,13,69.2,1746,48.5,scored,1.427,0.66512,nan
+"031 R6 LA6 (0.5 TV12 + 0.5 la6), slim int8",248510,13,70.4,1701,47.2,scored,1.49,0.66362,nan
+"032 mixed pair LSTM LA12_A + GRU LA25 (separate chains), int8 LSTM",1300000,16,115.9,3076,85.4,scored,1.356,0.66635,nan
+032 mixed pair LSTM LA25_A + GRU LA12,1300000,16,116.8,2992,83.1,scored,1.405,0.66596,nan
+"032 R13 LA12 IRP (i1 inputs + residual MLP + position), slim int8",309935,20,82.2,1986,55.2,scored,1.49,0.66558,nan
+"031 pair R11_LA12_A2 + R11_LA25_A2 (best pair recipe, new seeds)",968058,13,99.1,2492,69.2,scored,1.432,0.66543,nan
+031 pair LA12_A + R11_LA25_A2,968058,13,97.7,2567,71.3,scored,1.37,0.665,nan
+"032 R18 LA12 distributional head (CE 0.5 on true labels), slim int8",260000,20,76.8,1857,51.6,scored,1.489,0.66561,nan
+032 mixed pair LSTM LA12_A + GRU LA50,1300000,16,119.4,2917,81.0,scored,1.474,0.66638,nan
+032 mixed pair LSTM LA12_A + GRU LA25 seed 1,1300000,16,120.4,2851,79.2,scored,1.52,0.66575,nan
+032 mixed pair LSTM LA12_A + GRU96 LA25,1000000,16,108.4,2697,74.9,scored,1.447,0.66542,nan
+032 jointly trained pair LSTM LA12 + GRU LA25 (lambda 0.5),1300000,16,127.7,2947,81.9,scored,1.56,0.66601,nan
+032 mixed pair LSTM LA12 32 epochs + GRU LA50,1300000,16,118.3,2856,79.3,scored,1.491,0.66641,nan
+032 fusion pair LSTM LA12_A + fusion GRU LA50,1150000,37,117.4,2747,76.3,scored,1.539,0.6664,nan
+032 fusion pair LSTM LA12_A + fusion GRU LA25,1150000,37,117.5,2891,80.3,scored,1.463,0.66632,nan
+"031 W256_LA12_A single (width 256, LA12 targets)",887743,13,89.8,2262,62.8,scored,1.429,0.66573,nan
+032 mixed pair cross-fitted LSTM LA12cf + GRU LA50,1300000,16,118.3,2997,83.2,scored,1.421,0.66612,nan
+033 mixed pair all-feature LSTM LA12 + lean GRU LA50,1330000,16,,3047,84.6,scored,,0.66658,nan
+033 pair all-feature LSTM LA12 + fusion-sin GRU LA50,412000,39,,3197,88.8,scored,,0.66583,nan
+033 fusion-sin GRU LA50 single,130179,23,,1621,45.0,scored,,0.66339,nan
+"033 all-feature LSTM LA12 single ([x,cos,sin] on 112 inputs), slim int8",281775,16,,1827,50.7,scored,,0.66597,nan
+033 all-feature GRU LA50 single,215215,16,,1987,55.2,scored,,0.66485,nan
+037 IOBinding solution.py + the 0.66658 pair graph (identical predictions),1330000,16,,3682,102.3,scored,,0.66658,nan
+036 mixpair all-feature LSTM LA12 + decorrelation penalty + lean GRU LA50,1330000,16,,3042,84.5,scored,,0.66634,nan
+036 mixpair all-feature LSTM LA12 + decorrelation + warm restarts + lean GRU LA50,1330000,16,,3196,88.8,scored,,0.66634,nan
+037 mixpair all-feature LSTM segment-end labels + lean GRU LA50,1330000,16,,3026,84.1,scored,,0.66619,nan
+"001 (d=128, full-scale)",nan,nan,233.5,4197,116.6,timeout,2.003,nan,0.67848

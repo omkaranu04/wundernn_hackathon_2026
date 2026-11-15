@@ -1,0 +1,78 @@
+# WNN Connectome starter pack datasets
+/wnn_connectome_starterpack/datasets/
+
+# Downloaded starter pack archive
+*.tar.gz
+
+# Claude configuration
+.claude/
+
+# Submission outputs
+/submissions/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Experiment and analysis logs
+*.log
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# ONNX model exports
+*.onnx
+*.onnx.data
+
+# ONNX Runtime profiling outputs
+onnxruntime_profile_*.json
+onnxruntime_profile__*.json
+
+# macOS metadata
+.DS_Store
+._*
+
+# Context dump for external LLM brainstorming (not part of the project itself)
+/CONTEXT.txt
+
+# Private reference notes on external repos/competitions (not this project's work)
+/EXTERNAL_REFERENCE_*.md
+
+# Generated archives
+*.zip
+
+# Regenerable analysis outputs (see analysis/scripts/)
+analysis/data/*.npy
+analysis/figures/*.png
+
+# Regenerable two-stage-pipeline embedding extractions (large, see e.g.
+# experiments/011_xgboost_head/extract_embeddings.py)
+experiments/*/embeddings/
+
+
+# 023 ensemble-ceiling stored validation predictions (~600MB, regenerable via extract_preds.py)
+experiments/023_ensemble_ceiling/preds/
+
+# 025 mask predictor outputs (mask_probs_train.npy is ~424MB, regenerable via label_train.py)
+experiments/025_scored_mask_predictor/mask_out/mask_probs_train.npy
+
+# 031 teacher-ensemble soft targets (~850MB, regenerable via teacher_preds.py)
+experiments/031_seed_ensemble_distillation/soft/
+
+# --- Public-repo hygiene ---
+# Organizer-provided starter pack (download it from the competition page)
+/wnn_connectome_starterpack/
+
+# Run/launcher shell scripts and their logs (machine-specific, not needed to read the code)
+*.sh
+*.out
+*.err
+*.pid
+experiments/*/logs/
+
+# Binary weights / prediction dumps (regenerable; not distributed)
+*.npz
+*.npy

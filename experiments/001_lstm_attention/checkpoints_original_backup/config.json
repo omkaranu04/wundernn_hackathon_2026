@@ -1,0 +1,7 @@
+{
+  "d_model": 24,
+  "lstm_layers": 1,
+  "n_heads": 4,
+  "attention_window": 32,
+  "ff_multiplier": 2
+}

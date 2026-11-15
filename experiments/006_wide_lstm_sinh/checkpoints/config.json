@@ -1,0 +1,10 @@
+{
+  "encoder_dim": 64,
+  "hidden_size": 224,
+  "num_layers": 1,
+  "head_dims": [
+    128,
+    64
+  ],
+  "clamp": 8.0
+}

@@ -1,0 +1,14 @@
+{
+  "hidden_size": 256,
+  "num_layers": 2,
+  "price_dim": 48,
+  "volume_dim": 48,
+  "trade_dim": 24,
+  "head_hidden": 128,
+  "aux_scored": false,
+  "bidirectional": false,
+  "merged_from": [
+    "results/checkpoints_R3h128_A:ema.pt",
+    "results/checkpoints_R3h128_B:ema.pt"
+  ]
+}

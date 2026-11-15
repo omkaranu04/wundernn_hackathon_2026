@@ -1,0 +1,14 @@
+{
+  "hidden_size": 256,
+  "num_layers": 2,
+  "price_dim": 48,
+  "volume_dim": 48,
+  "trade_dim": 24,
+  "head_hidden": 128,
+  "aux_scored": false,
+  "bidirectional": false,
+  "merged_from": [
+    "../030_floor_trainvalid_stack/results/checkpoints_E_floor10_aux_tv:ema.pt",
+    "../028_lean_weighted_ema_aux/results/checkpoints_C_trainvalid:ema.pt"
+  ]
+}

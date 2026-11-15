@@ -1,0 +1,8 @@
+{
+  "hidden_size": 128,
+  "num_layers": 2,
+  "price_dim": 16,
+  "volume_dim": 16,
+  "trade_dim": 8,
+  "head_hidden": 64
+}

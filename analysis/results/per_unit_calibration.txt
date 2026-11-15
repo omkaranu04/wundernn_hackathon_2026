@@ -1,0 +1,12 @@
+# per-unit calibration of S1_a100 (train-only) on valid scored rows (3,528,273)
+
+uncalibrated global WP 0.689331
+
+scale only fold 0: held-out WP 0.689903 -> 0.689923 (+0.000020); scales t0 [1.0, 1.0, 1.0, 1.0] t1 [1.0, 1.0, 0.951, 0.951]
+scale only fold 1: held-out WP 0.688711 -> 0.688679 (-0.000032); scales t0 [1.0, 0.951, 0.951, 1.0] t1 [1.0, 0.951, 1.0, 0.951]
+  mean held-out gain: -0.000006
+
+scale+offset fold 0: held-out WP 0.689903 -> 0.690132 (+0.000229); scales t0 [1.0, 1.0, 0.951, 0.951] t1 [1.0, 1.0, 0.951, 0.951] offsets t0 [0.04, 0.06, -0.01, -0.01] t1 [0.02, 0.03, -0.05, 0.0]
+scale+offset fold 1: held-out WP 0.688711 -> 0.688790 (+0.000080); scales t0 [1.0, 1.0, 1.0, 0.951] t1 [1.0, 0.951, 0.951, 0.951] offsets t0 [0.05, 0.09, 0.06, -0.03] t1 [0.0, -0.01, -0.04, 0.01]
+  mean held-out gain: +0.000154
+

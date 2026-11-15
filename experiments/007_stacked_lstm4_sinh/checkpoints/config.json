@@ -1,0 +1,5 @@
+{
+  "hidden_size": 128,
+  "num_layers": 4,
+  "clamp": 8.0
+}
