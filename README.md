@@ -13,8 +13,25 @@ carries state within each 20,000-row sequence. Constraints:
 The metric is a |y|-weighted Pearson correlation, with predictions clipped to ±2. A full restatement of the problem
 is in [PROBLEM_STATEMENT.md](PROBLEM_STATEMENT.md).
 
-**Best public leaderboard score: 0.66754**, from a five-model LSTM/GRU ensemble that ran in 47 minutes. The same
-ensemble on our int8 engine scored 0.66753 in 38½ minutes.
+## Final result
+
+**Private leaderboard: rank 67, score 0.67658** (up 12 places from our public rank).
+
+Final ranking used the best private score among three submissions we selected. The best of them was
+`054_NUMBA7_sext_G25seeds023`, a six-model ensemble on the int8 engine (v7):
+- the fine-tuned all-feature LSTM (LA12), the lean GRU (LA50) and the all-feature LSTM (LA50) at weight 0.2 each;
+- three seeds (0, 2, 3) of the all-feature GRU (LA25), sharing the remaining 0.4.
+
+On the public leaderboard it scored 0.66752 and ran in 44 minutes. Our best public score, 0.66754, came from a
+five-model version with two GRU seeds. The two were tied on public, but averaging three GRU seeds made the ensemble
+less dependent on any one seed. That was the reason we selected it, and it was the one that held up best on the private
+data.
+
+| selected submission | public | runtime |
+|---|---|---|
+| **054_NUMBA7_sext_G25seeds023** (six models, GRU seeds 0/2/3, int8 engine) | 0.66752 | 44m06s |
+| 049_NUMBA5_swapD25_plus_R33_s2 (five models, GRU seeds 0/2, int16 engine) | 0.66754 | 47m01s |
+| 048_NUMBA5_swapD25_plus_R32_s1 (five models, GRU seeds 0/1, int16 engine) | 0.66737 | 42m42s |
 
 ## Final approach
 
@@ -60,6 +77,7 @@ ensemble on our int8 engine scored 0.66753 in 38½ minutes.
 | numba engine → three and four members (039-040) | 0.66717 |
 | integer engine v5 → full-GRU LA25 member, four members | 0.66735 |
 | five members with two GRU seeds (v5) | **0.66754** |
+| six members, three GRU seeds averaged (v7 int8), selected | 0.66752 public / **0.67658 private** |
 
 All 136 scored submissions, with their runtimes, are listed in
 [analysis/scripts/compute_timing_correlations.py](analysis/scripts/compute_timing_correlations.py).
@@ -96,7 +114,7 @@ place them at `wnn_connectome_starterpack/`, with `datasets/train.parquet` and `
 the organizer's `utils.py`. `shared/data.py` imports `DataPoint` and the column constants from that `utils.py`.
 
 The environment:
-- for training: Python 3.12, `torch`, `numpy`, `pyarrow`, `onnx`, `onnxruntime`, `numba`, `tqdm`, `matplotlib`;
+- for training: Python 3.11, `torch`, `numpy`, `pyarrow`, `onnx`, `onnxruntime`, `numba`, `tqdm`, `matplotlib`;
 - at inference: `numpy`, `onnxruntime`, `numba`.
 
 A typical cycle for one member:

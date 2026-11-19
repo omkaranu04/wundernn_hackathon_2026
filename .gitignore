@@ -76,3 +76,8 @@ experiments/*/logs/
 # Binary weights / prediction dumps (regenerable; not distributed)
 *.npz
 *.npy
+
+# Local-only folders (never pushed): personal backup and the prize-verification package
+/wundernn_backup_*/
+/winners_package/
+experiments/031_seed_ensemble_distillation/results/teachers_remote/
